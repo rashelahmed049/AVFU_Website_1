@@ -306,3 +306,8 @@ body {
     color: #0b3d91;
     transform: translateX(3px);   /* subtle move, no jump */
 }
+
+.navbar,
+.hero {
+    flex-wrap: wrap;
+}
