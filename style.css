@@ -112,7 +112,7 @@ body {
 
 /* Text */
 .hero-text {
-    max-width: 45%;
+    max-width: 600px;        /* controls line length */
     padding: 30px;
 }
 
@@ -123,10 +123,16 @@ body {
 }
 
 .hero-text p {
-    margin-bottom: 20px;
-    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    text-align: left;       
+    max-width: 550px;
 }
 
+.buttons {
+    margin-top: 25px;   
+}
 .buttons .btn {
     padding: 10px 20px;
     border-radius: 6px;
@@ -305,4 +311,288 @@ body {
     background: #f2f6ff;
     color: #0b3d91;
     transform: translateX(3px);   /* subtle move, no jump */
+}
+/* ===== QUICK STRIP ===== */
+/* Container for the cards */
+.quick-links-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+    background: #f5f7fb;
+}
+
+/* Individual Card Styling */
+.quick-link-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Icon Box */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+/* Specific Card Colors (Light Backgrounds) */
+.notice .icon-box { background: #e7f0ff; color: #0b3d91; }
+.resource .icon-box { background: #f3e8ff; color: #6a0dad; }
+.database .icon-box { background: #e0f2f1; color: #00897b; }
+.tender .icon-box { background: #fff3e0; color: #d84315; }
+
+/* Text within cards */
+.card-text h4 {
+    font-size: 16px;
+    color: #1c2b4a;
+    margin-bottom: 4px;
+}
+
+.card-text p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* Right Arrow */
+.arrow-icon {
+    margin-left: auto;
+    color: #ccc;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.quick-link-card:hover .arrow-icon {
+    color: #0b3d91;
+}
+
+/* Responsive fix for smaller screens */
+@media (max-width: 992px) {
+    .quick-links-container {
+        flex-wrap: wrap;
+		margin-top: -50px;
+    }
+    .quick-link-card {
+        flex: 1 1 calc(50% - 20px); /* 2 per row on tablets */
+    }
+}
+/* Hero Adjustments */
+.hero {
+    background: #eaf3ff; /* The blue background from image */
+    padding: 60px 80px 120px 80px; /* Large bottom padding for overlap space */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    background: #d0e3ff;
+    color: #0b3d91;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* The White Overlap Container */
+.main-content {
+    background: white;
+    margin: -60px 40px 0 40px; /* Moves section UP by 60px */
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 5;
+}
+
+/* The Grid for Cards */
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Individual Card Design */
+.ql-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Specific Card Tint Colors */
+.notice { background: #f0f7ff; }
+.resource { background: #f2fdf5; }
+.database { background: #f7f3ff; }
+.tender { background: #fff7f2; }
+
+.ql-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 18px;
+    background: white; /* Icons sit on white boxes in cards */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Icon Colors */
+.notice .ql-icon { color: #0b3d91; }
+.resource .ql-icon { color: #2e7d32; }
+.database .ql-icon { color: #6a1b9a; }
+.tender .ql-icon { color: #d84315; }
+
+.ql-info h4 {
+    font-size: 15px;
+    color: #1c2b4a;
+    margin-bottom: 3px;
+}
+
+.ql-info p {
+    font-size: 11px;
+    color: #666;
+}
+
+.ql-arrow {
+    margin-left: auto;
+    color: #0b3d91;
+    opacity: 0.5;
+}
+
+.ql-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+/* Moves the white section HIGHER into the blue area */
+.main-content {
+    background: white;
+    margin: -100px 40px 0 40px; /* Changed from -60px to -100px to bring it UP */
+    border-radius: 30px;
+    padding: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Info Grid Layout (3 Columns) */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr; /* About is smaller, News/Events are wider */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.view-all {
+    font-size: 12px;
+    color: #0b3d91;
+    text-decoration: none;
+    border: 1px solid #0b3d91;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+/* List Item Styling (News & Events) */
+.list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f9f9f9;
+    position: relative;
+}
+
+.date-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fdf2f2; /* Light red/orange for news */
+    color: #d84315;
+    padding: 8px;
+    border-radius: 8px;
+    min-width: 50px;
+    font-weight: bold;
+}
+
+.date-box.blue {
+    background: #f0f7ff;
+    color: #0b3d91;
+}
+
+.date-box span:first-child { font-size: 18px; }
+.date-box span:last-child { font-size: 10px; text-transform: uppercase; }
+
+.list-content p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.list-content a, .list-content small {
+    font-size: 12px;
+    color: #777;
+    text-decoration: none;
+}
+
+.tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+.tag.new { background: #fff3e0; color: #e65100; }
+.tag.event { background: #e8f5e9; color: #2e7d32; }
+
+/* About Mini Section */
+.about-mini .logo-seal img {
+    width: 80px;
+    margin: 20px 0;
+}
+
+.know-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0b3d91;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #0b3d91;
+    padding: 8px 15px;
+    border-radius: 8px;
 }
