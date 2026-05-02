@@ -311,3 +311,64 @@ body {
 .hero {
     flex-wrap: wrap;
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    /* Dropdown fix */
+    .dropdown {
+        position: static;
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    /* Submenu fix */
+    .submenu {
+        position: static;
+        width: 100%;
+        border-left: none;
+    }
+
+    /* Hero section */
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .slider {
+        width: 100%;
+        height: 200px;
+    }
+
+    /* Logo */
+    .logo-text h3 {
+        font-size: 14px;
+    }
+
+    .logo-text p {
+        font-size: 11px;
+    }
+}
