@@ -8,6 +8,10 @@
 body {
     background: #f5f7fb;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* Top bar */
 .topbar {
