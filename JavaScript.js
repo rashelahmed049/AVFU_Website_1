@@ -31,7 +31,7 @@ function prevSlide() {
 /* ================= DOT CLICK ================= */
 function goToSlide(index) {
     showSlide(index);
-    resetAutoSlide();
+    resetAutoSlide(interval);
 }
 
 /* ================= AUTO SLIDE ================= */
