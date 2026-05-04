@@ -426,18 +426,22 @@ body {
 /* The Grid for Cards */
 .quick-links-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 12px;
+
+    width: 100%;          /* 🔥 important */
 }
 
 /* Individual Card Design */
 .ql-card {
     display: flex;
     align-items: center;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 10px;
+    border-radius: 10px;
     transition: 0.3s;
     cursor: pointer;
+	gap : 1px;
+	
 }
 
 /* Specific Card Tint Colors */
