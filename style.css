@@ -103,11 +103,12 @@ body {
 /* Hero */
 .hero {
     display: flex;
-    align-items: center;
+    align-items: flex-start; 
     justify-content: space-between;
     background: #eaf3ff;
-    padding: 40px;
+    padding: 10px 80px 120px 80px;
     border-radius: 30px;
+	top: -20;
 }
 
 /* Text */
@@ -412,36 +413,27 @@ body {
     font-weight: 600;
 }
 
-/* The White Overlap Container */
-.main-content {
-    background: white;
-    margin: -60px 40px 0 40px; /* Moves section UP by 60px */
-    border-radius: 30px;
-    padding: 40px;
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
-    position: relative;
-    z-index: 5;
-}
+
 
 /* The Grid for Cards */
 .quick-links-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 equal columns */
     gap: 12px;
-
-    width: 100%;          /* 🔥 important */
+    width: 100%;
 }
 
 /* Individual Card Design */
 .ql-card {
     display: flex;
     align-items: center;
+    gap: 8px;
     padding: 10px;
     border-radius: 10px;
     transition: 0.3s;
     cursor: pointer;
-	gap : 1px;
-	
+    min-width: 0;   /* IMPORTANT: allows content to shrink */
+    width: 100%;
 }
 
 /* Specific Card Tint Colors */
@@ -458,6 +450,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+	
     font-size: 18px;
     background: white; /* Icons sit on white boxes in cards */
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -473,8 +466,19 @@ body {
     font-size: 15px;
     color: #1c2b4a;
     margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+
+.tender {
+    justify-self: start;
+}
+.ql-info {
+    flex: 1;
+    min-width: 0;
+}
 .ql-info p {
     font-size: 11px;
     color: #666;
@@ -484,8 +488,8 @@ body {
     margin-left: auto;
     color: #0b3d91;
     opacity: 0.5;
+    flex-shrink: 0;
 }
-
 .ql-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
@@ -493,7 +497,7 @@ body {
 /* Moves the white section HIGHER into the blue area */
 .main-content {
     background: white;
-    margin: -100px 40px 0 40px; /* Changed from -60px to -100px to bring it UP */
+    margin: -140px 40px 0 40px; /* Changed from -60px to -100px to bring it UP */
     border-radius: 30px;
     padding: 30px;
     position: relative;
@@ -505,7 +509,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr; /* About is smaller, News/Events are wider */
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .info-card {
@@ -600,3 +604,100 @@ body {
     padding: 8px 15px;
     border-radius: 8px;
 }
+
+
+/* ==========================================
+   NEWS & UPDATES - AUTO SCROLL + HOVER PAUSE
+   ========================================== */
+
+.news-scroll {
+    height: 220px;
+    overflow-y: auto;        /* Manual scrolling always enabled */
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    padding-right: 6px;
+}
+
+/* Animated content */
+.news-scroll-inner {
+    animation: scrollNews 15s linear infinite;
+    will-change: transform;
+}
+
+/* Pause auto-scroll when mouse is over the news box */
+.news-scroll:hover .news-scroll-inner {
+    animation-play-state: paused;
+}
+
+/* Custom scrollbar */
+.news-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-scroll::-webkit-scrollbar-thumb {
+    background: #c5d3ea;
+    border-radius: 10px;
+}
+
+.news-scroll::-webkit-scrollbar-thumb:hover {
+    background: #0b3d91;
+}
+
+/* Auto-scrolling animation */
+@keyframes scrollNews {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+.news-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 4px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.news-title:hover {
+    color: #0b3d91;
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   UPCOMING EVENTS - MANUAL SCROLLBAR ONLY
+   ========================================== */
+
+.events-scroll {
+    height: 200px;           /* Increase/decrease as needed */
+    overflow-y: scroll;      /* Force scrollbar to always appear */
+    overflow-x: hidden;
+    padding-right: 6px;
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.events-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.events-scroll::-webkit-scrollbar-track {
+    background: #f1f5fb;
+    border-radius: 10px;
+}
+
+.events-scroll::-webkit-scrollbar-thumb {
+    background: #c5d3ea;
+    border-radius: 10px;
+}
+
+.events-scroll::-webkit-scrollbar-thumb:hover {
+    background: #0b3d91;
+}
+
