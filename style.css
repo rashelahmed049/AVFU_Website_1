@@ -28,11 +28,11 @@ body {
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #FFFFFF;
-    padding: 10px 40px;
-    color: black;
+    flex-direction: column;      /* Stack logo and menu vertically */
+    align-items: center;         /* Center everything horizontally */
+    background: #ffffff;
+    padding: 15px 40px -50px;
+    border-top: 4px solid #0b3d91;
 }
 /* Center menu */
 .navbar > ul {
@@ -101,15 +101,7 @@ body {
 
 
 /* Hero */
-.hero {
-    display: flex;
-    align-items: flex-start; 
-    justify-content: space-between;
-    background: #eaf3ff;
-    padding: 10px 80px 120px 80px;
-    border-radius: 30px;
-	top: -20;
-}
+
 
 /* Text */
 .hero-text {
@@ -148,10 +140,19 @@ body {
     color: white;
 }
 
-/* Slider */
+
+
+/* Move only the text section upward */
+.hero-text {
+    position: relative;
+    top: -10px;   /* Adjust as needed */
+}
+
+/* Move only the slider upward */
 .slider {
     position: relative;
-    width: 50%;
+    top: -50px;   /* Adjust independently */
+    width: 80%;
     height: 300px;
     overflow: hidden;
     border-radius: 20px;
@@ -213,24 +214,90 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;         /* Space between title and menu */
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
     width: auto;
-    margin-right: 12px;
 }
 
 .logo-text h3 {
-    font-size: 18px;
-    color: #0b3d91;
-    font-weight: 600;
+    font-size: 30px;                 /* Large and prominent */
+    font-weight: 500;                /* Bold */
+    letter-spacing: 0.5px;           /* Slight spacing for elegance */
+
+    /* Professional blue gradient text */
+    background: linear-gradient(90deg, #0b3d91, #1e5fd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Subtle shadow for depth */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+    /* Decorative underline */
+    position: relative;
+    display: block;
+	margin: 0;
+
+    /* Smooth hover effect */
+    transition: all 0.3s ease;
 }
 
+
 .logo-text p {
-    font-size: 13px;
-    color: #555;
+    font-size: 15px;
+    color: #4f5f7a;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    margin-top: 6px;
 }
+.logo-text p {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    /* Elegant muted blue-gray */
+    color: #5b6f8f;
+
+    /* Center alignment */
+    text-align: center;
+
+    /* Spacing */
+    margin-top: 6px;
+
+    /* Decorative horizontal lines on both sides */
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+.logo-text p::before,
+.logo-text p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #8aa4d0);
+}
+.logo-text p::after {
+    right: -15px;
+    transform: translateY(-50%);
+    background: linear-gradient(to left, transparent, #8aa4d0);
+}
+
+/* Left line positioning */
+.logo-text p::before {
+    left: -15px;
+    transform: translateY(-50%);
+}
+
+.logo-text {
+    text-align: center;
+}
+
 
 .logo {
     display: flex;
@@ -402,6 +469,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+	margin-top: -25px;
+	
 }
 
 .badge {
@@ -497,12 +566,35 @@ body {
 /* Moves the white section HIGHER into the blue area */
 .main-content {
     background: white;
-    margin: -140px 40px 0 40px; /* Changed from -60px to -100px to bring it UP */
+    margin: -130px 40px 0 40px; /* Changed from -60px to -100px to bring it UP */
     border-radius: 30px;
     padding: 30px;
     position: relative;
     z-index: 10;
 }
+/* Navigation Menu */
+.main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu li {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #111;
+}
+.main-menu li i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
 
 /* Info Grid Layout (3 Columns) */
 .info-grid {
@@ -606,9 +698,7 @@ body {
 }
 
 
-/* ==========================================
-   NEWS & UPDATES - AUTO SCROLL + HOVER PAUSE
-   ========================================== */
+
 
 .news-scroll {
     height: 220px;
@@ -699,5 +789,31 @@ body {
 
 .events-scroll::-webkit-scrollbar-thumb:hover {
     background: #0b3d91;
+}
+
+.navbar > ul {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    position: relative;
+    top: -10px;
+
+    background: rgba(245, 250, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 14px 35px;
+    border-radius: 50px;
+
+    /* Subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    /* Premium shadow */
+    box-shadow:
+        0 10px 30px rgba(11, 61, 145, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+    /* Keep above hero section */
+    z-index: 50;
 }
 
