@@ -816,4 +816,26 @@ body {
     /* Keep above hero section */
     z-index: 50;
 }
+/* Scroll ONLY the Khanapara submenu */
+.khanapara-submenu {
+    max-height: 420px !important;   /* Shows about 10–11 items */
+    overflow-y: auto !important;    /* Enable vertical scrolling */
+    overflow-x: hidden !important;
+    display: block !important;
+    padding-right: 6px;
+}
+
+/* Optional custom scrollbar */
+.khanapara-submenu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.khanapara-submenu::-webkit-scrollbar-thumb {
+    background: #c5d3ea;
+    border-radius: 10px;
+}
+
+.khanapara-submenu::-webkit-scrollbar-thumb:hover {
+    background: #0b3d91;
+}
 
