@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVFU | Assam Veterinary and Fishery University</title>
     <link rel="stylesheet" href="style.css">
+	
 </head>
 <body>
 
@@ -28,10 +29,24 @@
 <nav class="navbar">
     <div class="logo">
         <img src="vet_logo.png" alt="AVFU Logo">
+        <!-- Replace your existing university title section inside the navbar/header with this -->
+
+<nav class="navbar">
+   
+
+        <!-- Add this div here, right next to the logo image -->
         <div class="logo-text">
-            <h3>ASSAM VETERINARY AND FISHERY UNIVERSITY</h3>
+            <!-- Assamese title (top) -->
+            <h2 class="assamese-title">অসম পশুচিকিৎসা আৰু মীন বিশ্ববিদ্যালয়</h2>
+
+            <!-- English title (below Assamese) -->
+            <h3 class="english-title">ASSAM VETERINARY AND FISHERY UNIVERSITY</h3>
+
+            <!-- Address -->
             <p>Khanapara, Guwahati - 781028</p>
         </div>
+   
+</nav>
     </div>
 
     <ul>
@@ -122,9 +137,6 @@
 
         <li>ADV.SBTHUB</li>
 
-        <li>
-            E_LEARNING <i class="fa-solid fa-chevron-down"></i>
-        </li>
 
         <li>
             STUDENT'S CORNER <i class="fa-solid fa-chevron-down"></i>
@@ -135,54 +147,47 @@
                     HOSTELS<span class="menu-arrow">›</span>
                     <ul class="submenu">
                         <li class="submenu-parent">
-                            CVSC KHANAPARA <span class="menu-arrow">›</span>
+                            CVSC<span class="menu-arrow">›</span>
                             <ul class="submenu khanapara-submenu">
-                                <li>Animal Biotechnology</li>
-                                <li>Poultry</li>
-                                <li>Animal Biotechnology</li>
-                                <li>Anatomy & Histology</li>
-                                <li>Animal Genetics & Breeding</li>
-                                <li>Animal Nutrition</li>
-                                <li>Animal Reproduction, Gynaecology & Obstetrics</li>
-                                <li>Extension Education</li>
-                                <li>Livestock Farm Complex</li>
-                                <li>Instructional Poultry Farm</li>
-                                <li>Livestock Production & Management</li>
-                                <li>Livestock Products Technology</li>
-                                <li>Poultry Science</li>
-                                <li>Veterinary Biochemistry</li>
-                                <li>Veterinary Clinical Medicine, Ethics & Jurisprudence</li>
-                                <li>Veterinary Epidemiology & Preventive Medicine</li>
-                                <li>Veterinary Microbiology</li>
-                                <li>Veterinary Parasitology</li>
-                                <li>Veterinary Pathology</li>
-                                <li>Veterinary Pharmacology & Toxicology</li>
-                                <li>Veterinary Physiology</li>
-                                <li>Veterinary Public Health</li>
+                                <li>GIRLS HOSTEL NO.1 </li>
+                                <li>GIRLS HOSTEL NO.2</li>
+                                <li>TEMPORARY GIRLS HOSTEL</li>
+                                <li>MAIN HOSTEL(EASTERN WING)</li>
+                                <li>MAIN HOSTEL(WESTERN WING)</li>
+                                <li>ASSAM TYPE HOSTEL</li>
+                                <li>KBR HOSTEL</li>
+                                <li>NEW PG HOSTEL</li>
+                                <li>NEW GIRLS HOSTEL</li>
                             </ul>
 						</li>
 
                         <li class="submenu-parent">
-                            HOSTEL <span class="menu-arrow">›</span>
+                            CFSC <span class="menu-arrow">›</span>
                             <ul class="submenu">
-                                <li>Animal Biotechnology</li>
-                                <li>Poultry</li>
+                                <li>BRAHMAPUTRA BOYS HOSTEL</li>
+                                <li>GANGA GIRLS HOSTEL</li>
+								<li>YAMUNA GIRLS HOSTEL</li>
                             </ul>
                         </li>
 
-                        <li class="submenu-parent">
-                            STUDENT'S UNION <span class="menu-arrow">›</span>
+                        <li  class="submenu-parent">
+                            LCVSC <span class="menu-arrow">›</span>
                             <ul class="submenu">
-                                <li>Animal Biotechnology</li>
-                                <li>Poultry</li>
+								<li>BOYS HOSTEL NO.1 </li>
+                                <li>GIRLS HOSTEL NO.1 </li>
+                                <li>GIRLS HOSTEL NO.2</li>
                             </ul>
                         </li>
                     </ul>
                 </li>
 
-                <li>STUDENT's UNION/li>
+                <li>STUDENT's UNION</li>
                 
             </ul>
+        </li>
+		
+        <li>
+            E_LEARNING <i class="fa-solid fa-chevron-down"></i>
         </li>
 
         <li>
@@ -197,41 +202,51 @@
             EVENTS <i class="fa-solid fa-chevron-down"></i>
         </li>
     </ul>
+<!-- Search Box -->
+<div class="nav-search">
+    <input
+        type="text"
+        id="menuSearch"
+        placeholder="Search..."
+        autocomplete="off"
+        onkeyup="searchMenu()"
+    >
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <!-- Suggestions Dropdown -->
+    <div id="searchResults" class="search-results"></div>
+</div>
 </nav>
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-text">
-        <h1>Welcome to Assam Veterinary and Fishery University</h1>
-        <p>
-            Assam Veterinary and Fisheries University (AVFU) is a State University 
-			established by the Government of Assam under The Assam Veterinary and Fishery
-			University Act, 2024 (Assam Act No. XXI of 2024). Headquartered at Khanapara, 
-			Guwahati, the University was constituted in February 2024 through the integration 
-			of veterinary and fisheries institutions of the State. AVFU is dedicated to education, 
-			research, extension, and technology transfer in veterinary, animal, fishery, and 
-			allied sciences, with the objective of supporting sustainable livestock and fisheries 
-			development in Assam.
-        </p>
-        <div class="buttons">
-            <button class="btn primary">About AVFU</button>
-            <button class="btn">Explore Campus</button>
-        </div>
-    </div>
+<!-- ================= FULL WIDTH AUTO IMAGE SLIDER ================= -->
+<section class="hero-slider">
+    <div class="slider full-slider">
 
-    <!-- Image Slider -->
-    <div class="slider">
         <div class="slides">
-            <img src="G:\Rasel\30-04-2026\images\home_page_slide\img1.jpg" class="slide active">
-            <img src="G:\Rasel\30-04-2026\images\home_page_slide\img2.jpg" class="slide">
-            <img src="G:\Rasel\30-04-2026\images\home_page_slide\img3.jpg" class="slide">
+            <img src="images/home_page_slide/img1.jpg" class="slide active" alt="AVFU Slide 1">
+            <img src="images/home_page_slide/img2.jpg" class="slide" alt="AVFU Slide 2">
+            <img src="images/home_page_slide/img3.jpg" class="slide" alt="AVFU Slide 3">
+            <img src="images/home_page_slide/img4.jpg" class="slide" alt="AVFU Slide 4">
+            <img src="images/home_page_slide/img5.jpg" class="slide" alt="AVFU Slide 5">
+            <img src="images/home_page_slide/img6.jpg" class="slide" alt="AVFU Slide 6">
         </div>
-        <div class="dots">
-            <span class="dot active" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
-            <span class="dot" onclick="goToSlide(2)"></span>
+
+        <!-- Optional Overlay -->
+        <div class="slider-overlay"></div>
+
+        
+	 <!-- Dark overlay ON TOP OF THE IMAGES -->
+        <div class="slider-overlay"></div>
+
+        <!-- Text displayed ON TOP OF THE IMAGES -->
+        <div class="slider-caption top-caption">
+            <h1>Welcome to Assam Veterinary and Fishery University</h1>
         </div>
-        <button class="arrow left" onclick="prevSlide()">❮</button>
-        <button class="arrow right" onclick="nextSlide()">❯</button>
+
+        <!-- Moving Notice at the Bottom (also on top of the images) -->
+        <div class="slider-notice">
+            <span>📢 New Admission into B.V.Sc &amp; A.H. and B.F.Sc, AVFU</span>
+        </div>
     </div>
 </section>
 
