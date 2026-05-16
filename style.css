@@ -13,7 +13,7 @@ body {
 .topbar {
     background: #0b3d91;
     color: white;
-    padding: 8px 40px;
+    padding: 10px 5px;
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -23,6 +23,13 @@ body {
     color: white;
     margin-left: 15px;
     text-decoration: none;
+}
+.topbar .contact-info,
+.topbar .links {
+    padding: 0 40px;         /* Keep content aligned */
+}
+.topbar .contact-info {
+    margin-left: -15px;   /* Increase negative value to move further left */
 }
 
 /* Navbar */
@@ -545,13 +552,13 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 /* Moves the white section HIGHER into the blue area */
-.main-content {
-    background: linear-gradient(
-        to right,
-        #f7e7a3 0%,   /* Light golden yellow */
-        #fbf3cf 45%,  /* Very soft champagne gold */
-        #ffffff 100%  /* Fade to white */
-    );
+.main-content {background: linear-gradient(
+    to right,
+    #f4f8ff,
+    #f9fbfd,
+    #ffffff
+);
+);
     margin: 20px 40px 0 40px; /* Changed from -60px to -100px to bring it UP */
     border-radius: 30px;
     padding: 30px;
@@ -564,7 +571,7 @@ body {
     justify-content: center;
     align-items: center;
     list-style: none;
-    gap: 40px;
+    gap: 10px;
     margin: 0;
     padding: 0;
 }
@@ -598,7 +605,7 @@ body {
     #ffffff 100%
 );
     border: 1px solid #f0f0f0;
-    border-radius: 15px;
+    border-radius: 40px;
     padding: 20px;
 }
 
@@ -929,7 +936,7 @@ html, body {
 /* Search container */
 .nav-search {
     position: absolute;
-    top: 20px;
+    top: 50px;
     right: 40px;
     width: 200px;
     z-index: 2000;
@@ -1156,5 +1163,125 @@ html, body {
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+.site-footer {
+    background: linear-gradient(
+        to right,
+        #072a63,
+        #0b3d91,
+        #0d4fbf
+    );
+    color: #ffffff;
+    margin-top: 40px;
+    padding: 5px 80px 25px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Top links */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: #dfeaff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* University name */
+.footer-university h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.footer-university p {
+    color: #c8d9ff;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Social icons */
+.footer-social h4 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin: 0 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* Sitemap / Contacts / Disclaimer */
+.footer-bottom-links {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-bottom-links a {
+    color: #dfeaff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
+}
+
+.footer-bottom-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Copyright */
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #c8d9ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-university h3 {
+        font-size: 20px;
     }
 }
